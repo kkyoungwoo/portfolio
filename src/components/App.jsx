@@ -41,8 +41,7 @@ function App() {
     useEffect(()=>{
         window.addEventListener('scroll', onScroll)
         console.log("position:"+position)
-        console.log("bannerPosition :" + bannerPosition)
-        setBannerPosition(useref.current.offsetTop)
+        setBannerPosition(useref.current.offsetHeight)
         return()=>{
             window.addEventListener('scroll', onScroll)
         }
@@ -56,9 +55,7 @@ function App() {
 
         useEffect(()=>{
             setBannerBottomPosition(bannerRef.current.offsetHeight)
-            setBannerHeight(bannerHeightRef.current.offsetHeight)
-            console.log("bannerBottomPosition:"+bannerBottomPosition)
-            console.log("bannerHeight:"+bannerHeight)
+            setBannerHeight(bannerHeightRef.current.offsetTop)
         },[position])
 
     return (
@@ -114,9 +111,9 @@ function App() {
                 bannerHeightRef={bannerHeightRef}
                 bannerBottomPosition={bannerBottomPosition}
                 bannerHeight={bannerHeight}
+                useref={useref}
                 />
-                <span ref={useref}></span>
-                <Cerousel />
+                <Cerousel/>
                 <Portfolio />
                 <Message />
                 <Mail />

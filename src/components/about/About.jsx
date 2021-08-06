@@ -171,16 +171,16 @@ function About(props) {
                 <div>오늘날짜 : {count} </div>
                 <div>업데이트 : 2021. 1. 1.</div>
             </div>
-            <div className="about_inner"
-                ref={props.bannerRef}>
+            <div className="about_inner">
                 <div className="aboutbanner" style={{
                     border : props.colorBtn ? "1px solid white" : "1px solid black", 
                     boxShadow: props.colorBtn ? "5px 5px 20px rgba(255,255,255,.1)" : "5px 5px 20px rgba(0,0,0,.3)",
-                    transform: props.position < props.bannerPosition ? "translateY("+(props.position -props.bannerHeight +210 ) + "px)" : "translateY(0px)",
-                }}>
-                    { /* props.bannerBottomPosition
-                    props.bannerHeight*/}
-                    <div className="careerdata" ref={props.bannerHeightRef}>
+                    maxHeight: props.bannerPosition+ "px",
+                    transform: props.position < (props.bannerHeight - props.bannerPosition - 180) ? "translateY("+(props.position) + "px)" : "none",
+                }}
+                ref={props.bannerRef}
+                >
+                    <div className="careerdata">
                         <h3>경력사항</h3>
                         {aboutData.map((item,idx)=>{
                             return(
@@ -362,7 +362,9 @@ function About(props) {
                     </div>
                     <div className="aboutcard todo" style={{
                         border : props.colorBtn ? "1px solid white" : "1px solid black", 
-                    }}>
+                    }}
+                    ref={props.useref}
+                    >
                         <h3>개인공부</h3>
                         {aboutSubStudyData.map((item,idx)=>{
                             return(
@@ -384,6 +386,7 @@ function About(props) {
                     </div>
                 </div>
             </div>
+            <span ref={props.bannerHeightRef}></span>
         </div>
     )
 }

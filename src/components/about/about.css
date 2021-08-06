@@ -90,12 +90,12 @@
 
 .about_warp .about_inner .aboutbanner .project_footer {
   width: 100%;
-  padding: 10px;
+  height: 100%;
   border-radius: 0 0 9px 9px;
   border-top: 1px solid black;
-  bottom: 0;
-  padding: 5% 10%;
   background: black;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .about_warp .about_inner .aboutbanner .project_footer .myimg {
@@ -108,6 +108,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  overflow: hidden;
 }
 
 .about_warp .about_inner .aboutbanner .project_footer .myimg img {
@@ -115,6 +116,17 @@
   max-height: 100%;
   background-position: center center;
   background-size: contain;
+  -webkit-transform: translateY(-150px);
+          transform: translateY(-150px);
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+
+@media screen and (max-width: 1020px) {
+  .about_warp .about_inner .aboutbanner .project_footer .myimg img {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
 }
 
 .about_warp .about_inner .aboutcards {
