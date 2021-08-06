@@ -4,10 +4,29 @@
   margin-bottom: 20px;
 }
 
+.about_warp .about_date div {
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .about_warp .about_date {
+    font-size: 14px;
+  }
+}
+
 .about_warp .about_inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media screen and (max-width: 1025px) {
+  .about_warp .about_inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .about_warp .about_inner .aboutbanner {
@@ -35,10 +54,17 @@
   transition: 1s;
 }
 
+@media screen and (max-width: 1025px) {
+  .about_warp .about_inner .aboutbanner {
+    -webkit-transform: translateY(0px) !important;
+            transform: translateY(0px) !important;
+  }
+}
+
 .about_warp .about_inner .aboutbanner .careerdata {
   width: 100%;
   margin-bottom: 20px;
-  padding: 5% 10px;
+  padding: 5% 20px;
 }
 
 .about_warp .about_inner .aboutbanner .careerdata .aboutdata_inner {
@@ -50,7 +76,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 10px;
+  padding: 10px 20px;
   margin: 10px 0;
   border-radius: 10px;
 }
@@ -122,10 +148,10 @@
   transition: 1s ease-in-out;
 }
 
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 1025px) {
   .about_warp .about_inner .aboutbanner .project_footer .myimg img {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    -webkit-transform: translateY(-35px);
+            transform: translateY(-35px);
   }
 }
 
@@ -134,6 +160,14 @@
       -ms-flex: 1;
           flex: 1;
   margin-left: 20px;
+  margin-top: 0px;
+}
+
+@media screen and (max-width: 1025px) {
+  .about_warp .about_inner .aboutcards {
+    margin-left: 0px;
+    margin-top: 20px;
+  }
 }
 
 .about_warp .about_inner .aboutcards .aboutcard {
@@ -237,11 +271,17 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  margin: 0;
 }
 
 .about_warp .about_inner .aboutcard.todo .todowarp .todolist {
   width: 100%;
   -ms-grid-column-align: space-between;
       justify-self: space-between;
+  margin: 0;
+}
+
+.about_warp .about_inner .aboutcard.todo .todowarp .todolist div {
+  margin: 0 0 10px 0;
 }
 /*# sourceMappingURL=about.css.map */

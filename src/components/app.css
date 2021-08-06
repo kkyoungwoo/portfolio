@@ -135,6 +135,7 @@ a {
   -webkit-transition: .5s;
   transition: .5s;
   cursor: pointer;
+  z-index: 999;
 }
 
 @media screen and (max-width: 1025px) {
@@ -164,6 +165,7 @@ a {
 }
 
 .app header nav #mobile_nav:checked ~ .navi_menu {
+  position: fixed;
   left: 0;
   top: 0;
   height: 100%;

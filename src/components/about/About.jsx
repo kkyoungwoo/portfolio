@@ -175,8 +175,8 @@ function About(props) {
                 <div className="aboutbanner" style={{
                     border : props.colorBtn ? "1px solid white" : "1px solid black", 
                     boxShadow: props.colorBtn ? "5px 5px 20px rgba(255,255,255,.1)" : "5px 5px 20px rgba(0,0,0,.3)",
-                    maxHeight: props.bannerPosition+ "px",
-                    transform: props.position < (props.bannerHeight - props.bannerPosition - 180) ? "translateY("+(props.position) + "px)" : "none",
+                    maxHeight: props.bannerPosition *1.5 + "px",
+                    transform: props.position < (props.bannerHeight - props.bannerPosition - 385) ? "translateY("+(props.position) + "px)" : "translateY("+(props.bannerHeight - props.bannerPosition - 385) + "px)",
                 }}
                 ref={props.bannerRef}
                 >

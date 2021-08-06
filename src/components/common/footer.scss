@@ -19,6 +19,11 @@
                     background-size: cover;
                     cursor: pointer;
                 }
+                @media screen and (max-width: 1025px) {
+                    position: fixed;
+                    bottom: 0;
+                    margin-bottom: 30px;
+                }
             }
         }
         footer {
