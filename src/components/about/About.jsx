@@ -8,14 +8,14 @@ function About(props) {
             careerDateEnd: "2020.11.01",
             careerCompany: "아이코코",
             careerPosition: "developer",
-            careerLink: "https://www.naver.com",
+            careerLink: "https://dear.care",
         }
     ]
 
     const aboutProjectData = [
         {
             project: "대구 EXCO 설문폼 구축",
-            projectLink: "https://naver.com",
+            projectLink: "https://gbforestexpo.co.kr/",
         },
         {
             project: "디어케어 반응형 구축",
@@ -140,7 +140,7 @@ function About(props) {
     ]
 
     function useInterval(callback, delay) {
-      const savedCallback = useRef();
+      const savedCallback = useRef(null);
 
       // remember latest callback
       useEffect(() => {
@@ -171,13 +171,16 @@ function About(props) {
                 <div>오늘날짜 : {count} </div>
                 <div>업데이트 : 2021. 1. 1.</div>
             </div>
-            <div className="about_inner">
+            <div className="about_inner"
+                ref={props.bannerRef}>
                 <div className="aboutbanner" style={{
                     border : props.colorBtn ? "1px solid white" : "1px solid black", 
                     boxShadow: props.colorBtn ? "5px 5px 20px rgba(255,255,255,.1)" : "5px 5px 20px rgba(0,0,0,.3)",
-                    marginTop: props.position + "px"
+                    transform: props.position < props.bannerPosition ? "translateY("+(props.position -props.bannerHeight +210 ) + "px)" : "translateY(0px)",
                 }}>
-                    <div className="careerdata">
+                    { /* props.bannerBottomPosition
+                    props.bannerHeight*/}
+                    <div className="careerdata" ref={props.bannerHeightRef}>
                         <h3>경력사항</h3>
                         {aboutData.map((item,idx)=>{
                             return(

@@ -1,13 +1,13 @@
 .about_warp .about_date {
   font-size: 20px;
   font-weight: 700;
+  margin-bottom: 20px;
 }
 
 .about_warp .about_inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-top: 30px;
 }
 
 .about_warp .about_inner .aboutbanner {
@@ -28,10 +28,11 @@
   height: 100%;
   bottom: 0;
   border-radius: 10px;
-  max-height: 800px;
-  -webkit-transition: 1;
-  transition: 1;
   overflow: hidden;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .about_warp .about_inner .aboutbanner .careerdata {
@@ -197,6 +198,10 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+}
+
+.about_warp .about_inner .aboutcards .aboutcard:last-child {
+  margin: 0;
 }
 
 .about_warp .about_inner .aboutcard.todo {

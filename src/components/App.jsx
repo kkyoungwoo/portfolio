@@ -1,4 +1,4 @@
-import React, {useState,useEffect,useCallback} from 'react';
+import React, {useState,useEffect,useRef} from 'react';
 import { connect } from 'react-redux'
 
 import Header from './common/Header';
@@ -13,10 +13,26 @@ import './app.css'
 
 function App() {
 
+    const useref = useRef(null)
+
+    const getSiteTop = () =>{
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        })
+    }
+
+    const getCerouselTop = () =>{
+        window.scrollTo({
+            top: useref.current.offsetTop,
+            behavior: "smooth"
+        })
+    }
+
     const [colorBtn,setColorBtn] = useState(true)
     const [position,setPosition] = useState(0)
 
-    const [scrollTopBtn,setScrollTopBtn] = useState(true)
+    const [bannerPosition,setBannerPosition] = useState(0)
     
     function onScroll(){
         setPosition(window.scrollY)
@@ -24,11 +40,26 @@ function App() {
 
     useEffect(()=>{
         window.addEventListener('scroll', onScroll)
-        console.log(position)
+        console.log("position:"+position)
+        console.log("bannerPosition :" + bannerPosition)
+        setBannerPosition(useref.current.offsetTop)
         return()=>{
             window.addEventListener('scroll', onScroll)
         }
     },[position])
+
+    const bannerRef = useRef(null)
+    const bannerHeightRef = useRef(null)
+
+    const [bannerBottomPosition,setBannerBottomPosition] = useState(0)
+    const [bannerHeight,setBannerHeight] = useState(0)
+
+        useEffect(()=>{
+            setBannerBottomPosition(bannerRef.current.offsetHeight)
+            setBannerHeight(bannerHeightRef.current.offsetHeight)
+            console.log("bannerBottomPosition:"+bannerBottomPosition)
+            console.log("bannerHeight:"+bannerHeight)
+        },[position])
 
     return (
         <div className="app" style={{
@@ -36,7 +67,7 @@ function App() {
             color: colorBtn ? "white" : "black"
             }}>
             <header style={{background: colorBtn ? "#292a2d" : "white"}}>
-                <div className="logo">
+                <div className="logo" onClick={getCerouselTop}>
                     <img src={colorBtn ? "./assets/common/logo/logo_white.png" : "./assets/common/logo/logo_black.png"} alt="logo" />
                 </div>
                 <nav>
@@ -75,13 +106,22 @@ function App() {
                 </nav>
             </header>
             <div className="wrapper">
-                <About colorBtn={colorBtn} position={position}/>
+                <About
+                colorBtn={colorBtn}
+                position={position}
+                bannerPosition={bannerPosition}
+                bannerRef={bannerRef}
+                bannerHeightRef={bannerHeightRef}
+                bannerBottomPosition={bannerBottomPosition}
+                bannerHeight={bannerHeight}
+                />
+                <span ref={useref}></span>
                 <Cerousel />
                 <Portfolio />
                 <Message />
                 <Mail />
             </div>
-            <Footer colorBtn={colorBtn}/>
+            <Footer colorBtn={colorBtn} getSiteTop={getSiteTop}/>
         </div>
     )
 }

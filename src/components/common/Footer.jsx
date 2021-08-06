@@ -7,7 +7,7 @@ function Footer(props) {
             <div className="scroll_top">
                 <div style={{
                     background: props.colorBtn ? "white" : "#292a2d"
-                }}>
+                }} onClick={props.getSiteTop}>
                     <img className="scroll_icon" src={props.colorBtn ? "./assets/common/icon/pageup_black.png" : "./assets/common/icon/pageup_white.png"} alt="pageup" />
                 </div>
             </div>
