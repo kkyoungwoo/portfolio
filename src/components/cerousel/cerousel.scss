@@ -1,3 +1,31 @@
 .cerousel_wrap{
-    margin: 100px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+    h1{
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    .cerousel_cards{
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        height: 150px;
+        background: cornflowerblue;
+        overflow: hidden;
+        .cerousel_card{
+            min-width: 150px;
+            min-height: 150px;
+            background: coral;
+            margin-right: 30px;
+            text-align: center;
+            padding: 10px 0;
+            box-sizing: border-box;
+        }
+        .cerousel_card:last-child{
+            margin-right: 0px;
+        }
+    }
 }

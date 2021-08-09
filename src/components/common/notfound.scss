@@ -1,0 +1,16 @@
+.notfound {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    overflow: hidden;
+    h2{
+        width: 100%;
+        color: white;
+        margin: 5px;
+        text-align: center;
+    }
+}

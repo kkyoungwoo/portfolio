@@ -139,46 +139,42 @@ function About(props) {
         
     ]
 
-    function useInterval(callback, delay) {
-      const savedCallback = useRef(null);
+    const [position,setPosition] = useState(0)
 
-      // remember latest callback
-      useEffect(() => {
-        savedCallback.current = callback;
-      }, [callback]);
-
-      // setup the interval
-      useEffect(() => {
-        function tick() {
-          savedCallback.current();
-        }
-
-        if (delay !== null) {
-          let id = setInterval(tick, delay);
-          return () => clearInterval(id);
-        }
-      }, [delay]);
+    function onScroll(){
+        setPosition(window.scrollY)
     }
-    
-    let [count, setCount] = useState(new Date().toLocaleString());
-    useInterval(() => {
-        setCount(new Date().toLocaleString());
-    }, 1000);
+
+    const bannerRef = useRef(null)
+
+    const [bannerPosition,setBannerPosition] = useState(0)
+    const [bannerMainHeight,setBannerMainHeight] = useState(0)
+    const [bannerHeight,setBannerHeight] = useState(0)
+
+    useEffect(()=>{
+        window.addEventListener('scroll', onScroll)
+        setBannerPosition(props.useref.current.offsetHeight)
+        setBannerHeight(props.bannerHeightRef.current.offsetHeight)
+        setBannerMainHeight(bannerRef.current.offsetHeight)
+        return()=>{
+            window.addEventListener('scroll', onScroll)
+        }
+    },[props.count])
 
     return (
         <div className="about_warp">
             <div className="about_date">
-                <div>오늘날짜 : {count} </div>
+                <div>오늘날짜 : {props.count} </div>
                 <div>업데이트 : 2021. 1. 1.</div>
             </div>
             <div className="about_inner">
                 <div className="aboutbanner" style={{
                     border : props.colorBtn ? "1px solid white" : "1px solid black", 
                     boxShadow: props.colorBtn ? "5px 5px 20px rgba(255,255,255,.1)" : "5px 5px 20px rgba(0,0,0,.3)",
-                    maxHeight: props.bannerPosition *1.5 + "px",
-                    transform: props.position < (props.bannerHeight - props.bannerPosition - 385) ? "translateY("+(props.position) + "px)" : "translateY("+(props.bannerHeight - props.bannerPosition - 385) + "px)",
+                    maxHeight: bannerPosition *1.5 + "px",
+                    transform: position < (bannerHeight - bannerMainHeight) ? "translateY("+(position) + "px)" : "translateY("+(bannerHeight - bannerMainHeight) + "px)",
                 }}
-                ref={props.bannerRef}
+                ref={bannerRef}
                 >
                     <div className="careerdata">
                         <h3>경력사항</h3>
@@ -221,7 +217,7 @@ function About(props) {
                         </div>
                     </div>
                 </div>
-                <div className="aboutcards">
+                <div className="aboutcards" ref={props.bannerHeightRef}>
                     <div className="aboutcard lately" style={{
                                     border : props.colorBtn ? "1px solid white" : "1px solid black", 
                     }}>
@@ -386,7 +382,6 @@ function About(props) {
                     </div>
                 </div>
             </div>
-            <span ref={props.bannerHeightRef}></span>
         </div>
     )
 }
