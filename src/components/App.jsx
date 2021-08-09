@@ -117,14 +117,26 @@ function App() {
                             count={count}
                             />
                             <Cerousel/>
-                            <Portfolio />
+                            <Portfolio colorBtn={colorBtn} />
                             <Message />
                             <Mail />
                         </div>
                     </Route>
-                    <Route path="/portfolio" component={Portfolio} exact />
-                    <Route path="/message" component={Message} exact />
-                    <Route path="/gallery" component={Gallery} exact />
+                    <Route path="/portfolio" exact>
+                        <div className="wrapper">
+                            <Portfolio colorBtn={colorBtn} count={count}/>
+                        </div>
+                    </Route>
+                    <Route path="/message" exact>
+                        <div className="wrapper">
+                                <Message/>
+                        </div>
+                    </Route>
+                    <Route path="/gallery" exact>
+                        <div className="wrapper">
+                                <Gallery/>
+                        </div>
+                    </Route>
                     <Route path="*" component={NotFound} exact />
                 </Switch>
                 <Footer colorBtn={colorBtn} getSiteTop={getSiteTop}/>

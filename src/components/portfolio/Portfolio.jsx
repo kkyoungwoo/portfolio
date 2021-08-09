@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import './portfolio.css'
 
 function Portfolio(props) {
@@ -140,14 +140,50 @@ function Portfolio(props) {
         
     ]
 
+    const [position,setPosition] = useState(0)
+
+    function onScroll(){
+        setPosition(window.scrollY)
+    }
+
+    const userefLast = useRef(null)
+    const userefFirst = useRef(null)
+    const usereHeight = useRef(null)
+    const userefHeight = useRef(null)
+
+
+    const [bannerPosition,setBannerPosition] = useState(0)
+    const [bannerPositionHeight,setBannerPositionHeight] = useState(0)
+
+    const [bannerMainHeight,setBannerMainHeight] = useState(0)
+    const [bannerHeight,setBannerHeight] = useState(0)
+
+    useEffect(()=>{
+        window.addEventListener('scroll', onScroll)
+        setBannerPosition(userefFirst.current.offsetTop)
+        setBannerPositionHeight(userefHeight.current.offsetHeight)
+        setBannerHeight(userefLast.current.offsetHeight)
+        setBannerMainHeight(usereHeight.current.offsetHeight)
+        console.log(bannerPosition)
+        console.log(bannerMainHeight)
+        console.log(bannerPositionHeight)
+        return()=>{
+            window.addEventListener('scroll', onScroll)
+        }
+    },[props.count])
+    
+
     return (
-        <div className="portfoilo_inner" >
+        <div className="portfoilo_inner"
+            ref={usereHeight}
+        >
                 <div className="aboutbanner" style={{
                     border : props.colorBtn ? "1px solid white" : "1px solid black", 
                     boxShadow: props.colorBtn ? "5px 5px 20px rgba(255,255,255,.1)" : "5px 5px 20px rgba(0,0,0,.3)",
-                    //maxHeight: bannerPosition *1.5 + "px",
-                    //transform: position < (bannerHeight - bannerMainHeight) ? "translateY("+(position) + "px)" : "translateY("+(bannerHeight - bannerMainHeight) + "px)",
+                    maxHeight: "590px",
+                    transform: position > (bannerMainHeight + 300) ? "translateY("+(position - bannerMainHeight - 300) + "px)" : "translateY("+(0) + "px)",
                 }}
+                ref={userefHeight}
                 >
                     <div className="careerdata">
                         <h3>경력사항</h3>
@@ -190,7 +226,7 @@ function Portfolio(props) {
                         </div>
                     </div>
                 </div>
-                <div className="aboutcards" ref={props.bannerHeightRef}>
+                <div className="aboutcards" ref={userefFirst}>
                     <div className="aboutcard lately" style={{
                                     border : props.colorBtn ? "1px solid white" : "1px solid black", 
                     }}>
@@ -332,7 +368,7 @@ function Portfolio(props) {
                     <div className="aboutcard todo" style={{
                         border : props.colorBtn ? "1px solid white" : "1px solid black", 
                     }}
-                    ref={props.useref}
+                    ref={userefLast}
                     >
                         <h3>개인공부</h3>
                         {aboutSubStudyData.map((item,idx)=>{

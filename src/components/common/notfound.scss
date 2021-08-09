@@ -8,9 +8,14 @@
     background: black;
     overflow: hidden;
     h2{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 100%;
         color: white;
         margin: 5px;
         text-align: center;
+        text-shadow: 2px 2px 2px black;
     }
 }

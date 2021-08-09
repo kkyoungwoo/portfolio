@@ -40,8 +40,11 @@ a{
         padding: 30px;
         max-width: 1920px;
         margin: 0 auto;
+        padding-top:107px;
     }
     header {
+        position: fixed;
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -49,6 +52,7 @@ a{
         transition: .5s;
         border-bottom: 1px solid black;
         box-sizing: border-box;
+        z-index: 999;
 
         .logo {
             margin-left: 30px;
