@@ -3,57 +3,7 @@ import React from 'react'
 function Message() {
     return (
         <div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            <div>message</div>
-            
+            <div>멋진신발</div>
         </div>
     )
 }

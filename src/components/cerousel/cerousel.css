@@ -29,19 +29,27 @@
           justify-content: flex-start;
   width: 100%;
   height: 150px;
-  background: cornflowerblue;
+  background: darkgrey;
   overflow: hidden;
+  border-radius: 10px;
 }
 
 .cerousel_wrap .cerousel_cards .cerousel_card {
-  min-width: 150px;
-  min-height: 150px;
-  background: coral;
+  background: gray;
   margin-right: 30px;
   text-align: center;
   padding: 10px 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  border-radius: 10px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.cerousel_wrap .cerousel_cards .cerousel_card:first-child {
+  margin-left: 15px;
 }
 
 .cerousel_wrap .cerousel_cards .cerousel_card:last-child {

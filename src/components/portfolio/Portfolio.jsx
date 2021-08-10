@@ -3,394 +3,146 @@ import './portfolio.css'
 
 function Portfolio(props) {
 
-    const aboutData = [
-        {
-            careerDate: "2020.12.30",
-            careerDateEnd: "2020.11.01",
-            careerCompany: "아이코코",
-            careerPosition: "developer",
-            careerLink: "https://dear.care",
-        }
-    ]
-
     const aboutProjectData = [
         {
-            project: "대구 EXCO 설문폼 구축",
-            projectLink: "https://gbforestexpo.co.kr/",
+            project: "디어케어 반응형 구축",
+            projectDate: "2019-01-01",
+            projectSummary: "컴포넌트 구축",
+            projectData: "ㅇㅇㅇ을 이용하여작업하였습니다.1",
+            projectLink: "https://naver.com",
+            contribute: 100,
+            imgUrl: "",
         },
         {
             project: "디어케어 반응형 구축",
+            projectDate: "2019-01-01",
+            projectSummary: "컴포넌트 구축",
+            projectData: "ㅇㅇㅇ을 이용하여작업하였습니다.2",
             projectLink: "https://naver.com",
-        },
-    ]
-
-    const aboutSkillData = [
-        {
-            skill: "React.js",
-            skillimg: "./assets/icons/react.png"
+            contribute: 100,
+            imgUrl: "",
         },
         {
-            skill: "HTML5",
-            skillimg: "./assets/icons/html.png"
+            project: "디어케어 반응형 구축",
+            projectDate: "2019-01-01",
+            projectSummary: "컴포넌트 구축",
+            projectData: "ㅇㅇㅇ을 이용하여작업하였습니다.3",
+            projectLink: "https://naver.com",
+            contribute: 100,
+            imgUrl: "",
         },
         {
-            skill: "Scss",
-            skillimg: "./assets/icons/sass.png"
+            project: "디어케어 반응형 구축",
+            projectDate: "2019-01-01",
+            projectSummary: "컴포넌트 구축",
+            projectData: "ㅇㅇㅇ을 이용하여작업하였습니다.4",
+            projectLink: "https://naver.com",
+            contribute: 100,
+            imgUrl: "",
+        },
+        {
+            project: "디어케어 반응형 구축",
+            projectDate: "2019-01-01",
+            projectSummary: "컴포넌트 구축",
+            projectData: "ㅇㅇㅇ을 이용하여작업하였습니다.5",
+            projectLink: "https://naver.com",
+            contribute: 100,
+            imgUrl: "",
+        },
+        {
+            project: "디어케어 반응형 구축",
+            projectDate: "2019-01-01",
+            projectSummary: "컴포넌트 구축",
+            projectData: "ㅇㅇㅇ을 이용하여작업하였습니다.6",
+            projectLink: "https://naver.com",
+            contribute: 100,
+            imgUrl: "",
+        },
+        {
+            project: "디어케어 반응형 구축",
+            projectDate: "2019-01-01",
+            projectSummary: "컴포넌트 구축",
+            projectData: "ㅇㅇㅇ을 이용하여작업하였습니다.7",
+            projectLink: "https://naver.com",
+            contribute: 100,
+            imgUrl: "",
         },
     ]
     
-    const aboutSubSkillDefault = [
-        {
-            skill: "VScord",
-            skillimg: "./assets/icons/vscode.png"
-        },
-        {
-            skill: "HTML5",
-            skillimg: "./assets/icons/html.png"
-        },
-        {
-            skill: "CSS3",
-            skillimg: "./assets/icons/css.png"
-        },
-        {
-            skill: "JavaScript",
-            skillimg: "./assets/icons/js.png"
-        },
-        {
-            skill: "jQuery",
-            skillimg: "./assets/icons/jquery.png"
-        },
-    ]
-
-    const aboutSubSkillSpecial = [
-        {
-            skill: "React.js",
-            skillimg: "./assets/icons/react.png"
-        },
-        {
-            skill: "Redux",
-            skillimg: "./assets/icons/redux.png"
-        },
-        {
-            skill: "Yarn",
-            skillimg: "./assets/icons/yarn.png"
-        },
-    ]
-
-    const aboutSubSkillSpecials = [
-        {
-            skill: "Photoshop",
-            skillimg: "./assets/icons/photoshop.png"
-        },
-        {
-            skill: "Illustrator",
-            skillimg: "./assets/icons/illustrator.png"
-        },
-        {
-            skill: "Oven",
-            skillimg: "./assets/icons/oven.png"
-        },
-    ]
-
-    const aboutSubSkillCooperation = [
-        {
-            skill: "Notion",
-            skillimg: "./assets/icons/notion.png"
-        },
-        {
-            skill: "NAS",
-            skillimg: "./assets/icons/nas.png"
-        },
-        {
-            skill: "Pigma",
-            skillimg: "./assets/icons/pigma.png"
-        },
-        {
-            skill: "Zepline",
-            skillimg: "./assets/icons/zepline.png"
-        },
-    ]
-
-    const aboutSubStudyData = [
-        {
-            skill: "API",
-            skillimg: "./assets/icons/api.png",
-            skilltext: "- Email.js, kakao, naver 등 웹 개발에 필요한 API 개발!"
-        },
-        {
-            skill: "Firebase",
-            skillimg: "./assets/icons/firebase.png",
-            skilltext: "- 백엔드 서버와 API에 대한 이해를 위해 개인적으로 공부!"
-        },
-        {
-            skill: "AWS",
-            skillimg: "./assets/icons/aws.jpg",
-            skilltext: "- 개인적으로 공부하며 개발한 웹앱 배포 및 서비스!"
-        },
-        {
-            skill: "Github",
-            skillimg: "./assets/icons/github.png",
-            skilltext: "- 작업물 및 개인공부를 Git-hub에 업로드하여 생산성 향상!"
-        },
-        {
-            skill: "Git",
-            skillimg: "./assets/icons/git.png",
-            skilltext: "- 협업을 위한 git을 cmd로 컨트롤 가능!"
-        },
-        
-    ]
-
+    const [projectNum,setProjectNum] = useState(0)
     const [position,setPosition] = useState(0)
+
+    const latelyRef = useRef(null)
+    const [latelyRefPosition,setLatelyRefPosition] = useState(0)
+    const [latelyRefHeight,setLatelyRefHeight] = useState(0)
+
+    const detailRef = useRef(null)
+    const [detailRefHeight,setDetailRefHeight] = useState(0)
 
     function onScroll(){
         setPosition(window.scrollY)
     }
 
-    const userefLast = useRef(null)
-    const userefFirst = useRef(null)
-    const usereHeight = useRef(null)
-    const userefHeight = useRef(null)
-
-
-    const [bannerPosition,setBannerPosition] = useState(0)
-    const [bannerPositionHeight,setBannerPositionHeight] = useState(0)
-
-    const [bannerMainHeight,setBannerMainHeight] = useState(0)
-    const [bannerHeight,setBannerHeight] = useState(0)
-
     useEffect(()=>{
         window.addEventListener('scroll', onScroll)
-        setBannerPosition(userefFirst.current.offsetTop)
-        setBannerPositionHeight(userefHeight.current.offsetHeight)
-        setBannerHeight(userefLast.current.offsetHeight)
-        setBannerMainHeight(usereHeight.current.offsetHeight)
-        console.log(bannerPosition)
-        console.log(bannerMainHeight)
-        console.log(bannerPositionHeight)
         return()=>{
             window.addEventListener('scroll', onScroll)
         }
-    },[props.count])
-    
+    },[])
+
+    useEffect(() =>{
+        setLatelyRefPosition(latelyRef.current.offsetTop)
+        setLatelyRefHeight(latelyRef.current.offsetHeight)
+        setDetailRefHeight(detailRef.current.offsetHeight)
+        console.log(latelyRefPosition)
+    }, [onScroll])
 
     return (
-        <div className="portfoilo_inner"
-            ref={usereHeight}
-        >
-                <div className="aboutbanner" style={{
-                    border : props.colorBtn ? "1px solid white" : "1px solid black", 
-                    boxShadow: props.colorBtn ? "5px 5px 20px rgba(255,255,255,.1)" : "5px 5px 20px rgba(0,0,0,.3)",
-                    maxHeight: "590px",
-                    transform: position > (bannerMainHeight + 300) ? "translateY("+(position - bannerMainHeight - 300) + "px)" : "translateY("+(0) + "px)",
-                }}
-                ref={userefHeight}
-                >
-                    <div className="careerdata">
-                        <h3>경력사항</h3>
-                        {aboutData.map((item,idx)=>{
-                            return(
-                                <div key={idx} className="aboutdata_inner"  style={{
-                                    border : props.colorBtn ? "1px solid white" : "1px solid black", 
-                                }}>
-                                    <div className="position">
-                                        <div className="position_inner">
-                                            <div>
-                                                {item.careerCompany}
-                                            </div>
-                                            <button>
-                                               <a href={item.careerLink} target="_blank">
-                                                홈페이지
-                                               </a>
-                                            </button>
-                                        </div>
-                                        <div>
-                                            {item.careerPosition}
-                                        </div>
-                                    </div>
-                                    <div>
-                                        {item.careerDate}
-                                    </div>
-                                    <div>
-                                        ~
-                                    </div>
-                                    <div>
-                                        {item.careerDateEnd}
-                                    </div>
-                                </div>
-                            )
-                        })}
-                    </div>
-                    <div className="project_footer">
-                        <div className="myimg">
-                            <img src="./assets/common/notfound/notfound.png" alt="my_img" />
-                        </div>
-                    </div>
-                </div>
-                <div className="aboutcards" ref={userefFirst}>
-                    <div className="aboutcard lately" style={{
-                                    border : props.colorBtn ? "1px solid white" : "1px solid black", 
-                    }}>
-                        <h3>최근작업</h3>
+        <div className="portfoilo_inner">
+            <div className="aboutcards">
+                <h3>최근작업</h3>
+                <div className="aboutcard" ref={latelyRef}>
+                    <div className="lately">
                         {aboutProjectData.map((item,idx)=>{
                             return(
                                 <div key={idx} className="subdata">
-                                    {item.project}
-                                    <button>
-                                        <a href={item.projectLink} target="_blank">
-                                            클릭
-                                        </a>
-                                    </button>
-                                </div>
-                            )
-                        })}
-                    </div>
-                    <div className="aboutcard" style={{
-                        border : props.colorBtn ? "1px solid white" : "1px solid black", 
-                    }}>
-                        <h3>주요기술</h3>
-                        <div className="innertext">
-                            <div>
-                                - 기본적으로 퍼블리싱할 때 사용하는 언어 및 라이브러리!
-                            </div>
-                            <div>
-                                - 전통적인 웹앱 제작 방식에서 정적인 HTML로 협업 시 사용하는 기술!
-                            </div>
-                        </div>
-                        {aboutSkillData.map((item,idx)=>{
-                            return(
-                                <div key={idx}>
-                                    {item.skill}
-                                    <img src={item.skillimg} alt="skill" />
-                                </div>
-                            )
-                        })}
-                    </div>
-                    <div className="aboutcard" style={{
-                        border : props.colorBtn ? "1px solid white" : "1px solid black", 
-                    }}>
-                        <h3>실무스킬</h3>
-                        <div>Default</div>
-                        <div className="innertext">
-                            <div>
-                                - 동적인 웹에 최적화된 자바스크립트 라이브러리, 리액트!
-                            </div>
-                            <div>
-                                - 리엑트에서 중앙데이터 관리를 위한 리덕스 툴!
-                            </div>
-                            <div>
-                                - npm 보다 생산성이 좋은 yarn!
-                            </div>
-                        </div>
-                        {aboutSubSkillDefault.map((item,idx)=>{
-                            return(
-                                <div key={idx}>
-                                    {item.skill}
-                                    <img src={item.skillimg} alt="skill" />
-                                </div>
-                            )
-                        })}
-                    </div>
-                    <div className="aboutcard" style={{
-                        border : props.colorBtn ? "1px solid white" : "1px solid black", 
-                    }}>
-                        <h3>실무스킬</h3>
-                        <div>Special I</div>
-                        <div className="innertext">
-                            <div>
-                                - 동적인 웹에 최적화된 자바스크립트 라이브러리, 리액트!
-                            </div>
-                            <div>
-                                - 리엑트에서 중앙데이터 관리를 위한 리덕스 툴!
-                            </div>
-                            <div>
-                                - npm 보다 생산성이 좋은 yarn!
-                            </div>
-                        </div>
-                        {aboutSubSkillSpecial.map((item,idx)=>{
-                            return(
-                                <div key={idx}>
-                                    {item.skill}
-                                    <img src={item.skillimg} alt="skill" />
-                                </div>
-                            )
-                        })}
-                    </div>
-                    <div className="aboutcard aboutskill" style={{
-                        border : props.colorBtn ? "1px solid white" : "1px solid black", 
-                    }}>
-                        <h3>실무스킬</h3>
-                        <div>Special II</div>
-                        <div className="innertext">
-                            <div>
-                                - 기초적인 보정작업을 할 수 있는 포토샵!
-                            </div>
-                            <div>
-                                - 기초적인 아이콘 디자인을 할 수 있는 일러스트!
-                            </div>
-                            <div>
-                                - 프로토타이핑을 빠르게 하기 위한 카카오 오븐!
-                            </div>
-                        </div>
-                        {aboutSubSkillSpecials.map((item,idx)=>{
-                            return(
-                                <div key={idx}>
-                                    {item.skill}
-                                    <img src={item.skillimg} alt="skill" />
-                                </div>
-                            )
-                        })}
-                    </div>
-                    <div className="aboutcard" style={{
-                        border : props.colorBtn ? "1px solid white" : "1px solid black", 
-                    }}>
-                        <h3>실무스킬</h3>
-                        <div>협업</div>
-                        <div className="innertext">
-                            <div>
-                                - Notion을 이용한 업무일지, 협업 경험!
-                            </div>
-                            <div>
-                                - NAS를 이용한 대용량 파일 저장소 경험!
-                            </div>
-                            <div>
-                                - Pigma,Zepline 을 이용한 퍼블리싱 경험!
-                            </div>
-                        </div>
-                        {aboutSubSkillCooperation.map((item,idx)=>{
-                            return(
-                                <div key={idx}>
-                                    {item.skill}
-                                    <img src={item.skillimg} alt="skill" />
-                                </div>
-                            )
-                        })}
-                    </div>
-                    <div className="aboutcard todo" style={{
-                        border : props.colorBtn ? "1px solid white" : "1px solid black", 
-                    }}
-                    ref={userefLast}
-                    >
-                        <h3>개인공부</h3>
-                        {aboutSubStudyData.map((item,idx)=>{
-                            return(
-                                <div key={idx} className="todowarp">
-                                    <div className="todolist">
+                                    <div className="subdata_inner" style={{
+                                    border : props.colorBtn ? "1px solid white" : "1px solid black", 
+                                    }}>
                                         <div>
-                                            {item.skill}
+                                            <div>{item.project}</div>
+                                            <div>{item.projectDate}</div>
+                                            <div>{item.projectSummary}</div>
                                         </div>
-                                        <div>
-                                            <img src={item.skillimg} alt="skill" />
+                                        <div className="button_warp">
+                                            <button
+                                            onClick={()=>setProjectNum(idx)}>
+                                                클릭
+                                            </button>
                                         </div>
                                     </div>
-                                    <div>
-                                        {item.skilltext}
-                                    </div>
                                 </div>
                             )
                         })}
+                    </div>
+                    <div className="subdata_detail" style={{
+                        border : props.colorBtn ? "1px solid white" : "1px solid black", 
+                        position: position > latelyRefPosition - 100 && position < latelyRefPosition + latelyRefHeight - detailRefHeight - 100 ? "fixed" : "absolute",
+                        top: position > latelyRefPosition - 100 ? "100px" : "0",
+                        right: position > latelyRefPosition - 100 ? "30px" : "0",
+                        width: position > latelyRefPosition - 100 ? "calc(50% - 30px)" : "50%",
+                        }}
+                        ref={detailRef}
+                        >
+                            {aboutProjectData[projectNum].projectData}
+                            {aboutProjectData[projectNum].projectLink}
+                            {aboutProjectData[projectNum].contribute}
+                            {aboutProjectData[projectNum].imgUrl}
                     </div>
                 </div>
+                
             </div>
+        </div>
     )
 }
 

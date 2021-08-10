@@ -189,7 +189,7 @@ function About(props) {
                                                 {item.careerCompany}
                                             </div>
                                             <button>
-                                               <a href={item.careerLink} target="_blank">
+                                               <a href={item.careerLink} target="_blank" rel="noopener noreferrer">
                                                 홈페이지
                                                </a>
                                             </button>
@@ -227,7 +227,7 @@ function About(props) {
                                 <div key={idx} className="subdata">
                                     {item.project}
                                     <button>
-                                        <a href={item.projectLink} target="_blank">
+                                        <a href={item.projectLink} target="_blank" rel="noopener noreferrer">
                                             클릭
                                         </a>
                                     </button>
