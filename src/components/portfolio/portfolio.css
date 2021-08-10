@@ -56,6 +56,10 @@
   margin-right: 10px;
 }
 
+.portfoilo_inner .aboutcards .aboutcard .lately .subdata:last-child .subdata_inner:last-child {
+  margin-bottom: 0;
+}
+
 .portfoilo_inner .aboutcards .aboutcard .subdata_detail {
   height: 500px;
   border-radius: 10px;
