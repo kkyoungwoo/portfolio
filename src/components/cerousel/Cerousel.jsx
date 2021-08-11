@@ -3,20 +3,16 @@ import './cerousel.css'
 
 const cerouselData = [
     {
-        text: "처음",
-        imgLink: "",
-    },
-    {
         text: "산림박람회",
-        imgLink: "",
+        imgLink: "./assets/production/exco.png",
     },
     {
         text: "아이코코",
-        imgLink: "",
+        imgLink: "./assets/production/dearcare.png",
     },
     {
         text: "마지막",
-        imgLink: "",
+        imgLink: "./assets/production/mainbanner.jpg",
     },
 ]
 
@@ -34,7 +30,7 @@ function Cerousel() {
 
     useEffect(() => {
         {/*const containerPosition = page < cerouselData.length-2 ? (CARD_SIZE + CARD_MARGIN) * (1 + page) : (CARD_SIZE + CARD_MARGIN) * (page -2);*/}
-        const containerPosition = (CARD_SIZE + CARD_MARGIN) * (1 + page)
+        const containerPosition = (CARD_SIZE + CARD_MARGIN) * (1 + page) - CARD_MARGIN /2
             if (touch) {
                 setContainer(containerPosition - (secondX - firstX));
             } else {
@@ -126,9 +122,8 @@ function Cerousel() {
                         transition: !touch ? "all 0.2s ease" : "none",
                     }}>
                         <div className="card">
-                            <div>{item.text}</div>
                             <div>
-                                <img src="" alt="img" />
+                                <img src={item.imgLink} alt="img" />
                             </div>
                         </div>
                     </div>

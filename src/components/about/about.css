@@ -146,6 +146,7 @@
           transform: translateY(-150px);
   -webkit-transition: 1s ease-in-out;
   transition: 1s ease-in-out;
+  -webkit-user-drag: none;
 }
 
 @media screen and (max-width: 1025px) {
@@ -231,6 +232,7 @@
   width: 18px;
   -webkit-box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
           box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
+  -webkit-user-drag: none;
 }
 
 .about_warp .about_inner .aboutcards .aboutcard .innertext {

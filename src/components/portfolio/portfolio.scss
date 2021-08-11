@@ -1,3 +1,63 @@
+@keyframes left100 {
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes left90 {
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes left80 {
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes left70 {
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes left60 {
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes right100 {
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes right90 {
+    100% {
+        transform: rotate(144deg);
+    }
+}
+
+@keyframes right80 {
+    100% {
+        transform: rotate(108deg);
+    }
+}
+
+@keyframes right70 {
+    100% {
+        transform: rotate(72deg);
+    }
+}
+
+@keyframes right60 {
+    100% {
+        transform: rotate(36deg);
+    }
+}
+
 .portfoilo_inner{
     .aboutcards{
         h3 {
@@ -39,9 +99,150 @@
                     }
                 }
             }
-            .subdata_detail{
-                height: 500px;
+            .subdata_detail {
+                min-height: 400px;
                 border-radius: 10px;
+                .projectdata_text {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 30px;
+                    text-align: center;
+                    padding: 0 20px;
+                }
+                .circle_wrap{
+                    position: absolute;
+                    height: 100px;
+                    width: 100px;
+                    top:50%;
+                    left:50%;
+                    transform: translate(-50%, -50%) scale(1.8);
+                    @media screen and(max-width: 767px) {
+                        transform: translate(-50%, -50%) scale(1.5);
+                    }
+                    @media screen and(max-width: 450px) {
+                        transform: translate(-50%, -50%) scale(1);
+                    }
+                    .circle_inner {
+                        position: absolute;
+                        z-index: 6;
+                        top: 50%;
+                        left: 50%;
+                        height: 80px;
+                        width: 80px;
+                        margin: -40px 0 0 -40px;
+                        background: rgb(41, 42, 45);
+                        border-radius: 100%;
+                        box-shadow: 0 1px 0 rgba(0,0,0,.2);
+                    }
+                    .circle{
+                        .bar.left{
+                            .progress{
+                                animation: left100 1s linear both;
+                            }
+                        }
+                        .bar.right {
+                            transform: rotate(180deg);
+                        }
+
+                        .bar {
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 100%;
+                            background: rgba(51, 52, 55,.1);
+                            -webkit-border-radius: 100%;
+                            clip: rect(0px, 100px, 100px, 50px);
+                            .progress {
+                                position: absolute;
+                                width: 100%;
+                                height: 100%;
+                                background: rgb(241, 242, 245);
+                                border-radius: 100%;
+                                -webkit-border-radius: 100%;
+                                clip: rect(0px, 50px, 100px, 0px);
+                            }
+                        }
+                    }
+                    .circle.hundred {
+                        .bar.left {
+                            .progress {
+                                animation: left100 1s linear both;
+                            }
+                        }
+                        .bar.right {
+                            .progress {
+                                animation: right100 1s linear both;
+                                animation-delay: 1s;
+                            }
+                        }
+                    }
+                    .circle.ninety {
+                        .bar.left {
+                            .progress {
+                                animation: left90 1s linear both;
+                            }
+                        }
+                        .bar.right {
+                            .progress {
+                                animation: right90 .9s linear both;
+                                animation-delay: 1s;
+                            }
+                        }
+                    }
+                    .circle.eighty {
+                        .bar.left {
+                            .progress {
+                                animation: left80 1s linear both;
+                            }
+                        }
+                        .bar.right {
+                            .progress {
+                                animation: right80 .8s linear both;
+                                animation-delay: 1s;
+                            }
+                        }
+                    }
+                    .circle.seventy {
+                        .bar.left {
+                            .progress {
+                                animation: left70 1s linear both;
+                            }
+                        }
+                        .bar.right {
+                            .progress {
+                                animation: right70 .5s linear both;
+                                animation-delay: 1s;
+                            }
+                        }
+                    }
+                    .circle.sixty {
+                        .bar.left {
+                            .progress {
+                                animation: left60 1s linear both;
+                            }
+                        }
+                        .bar.right {
+                            .progress {
+                                animation: right60 .3s linear both;
+                                animation-delay: 1s;
+                            }
+                        }
+                    }
+                    .progress_text{
+                        position: absolute;
+                        top:50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        z-index: 10;
+                        font-size: 24px;
+                        .progress_subtext{
+                            font-size: 12px;
+                            text-align: center;
+                        }
+                    }
+                }
             }
         }
     }

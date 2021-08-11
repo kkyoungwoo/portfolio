@@ -5,67 +5,34 @@ function Portfolio(props) {
 
     const aboutProjectData = [
         {
-            project: "디어케어 반응형 구축",
+            project: "EXCO",
             projectDate: "2019-01-01",
             projectSummary: "컴포넌트 구축",
-            projectData: "ㅇㅇㅇ을 이용하여작업하였습니다.1",
-            projectLink: "https://naver.com",
+            projectData: "1",
+            projectLink: "https://naver.com/",
             contribute: 100,
-            imgUrl: "",
+            contributeText: "hundred",
+            imgUrl: "img",
         },
         {
             project: "디어케어 반응형 구축",
             projectDate: "2019-01-01",
             projectSummary: "컴포넌트 구축",
-            projectData: "ㅇㅇㅇ을 이용하여작업하였습니다.2",
+            projectData: "ㅇㅇㅇ을 이용하여 작업하였습니다.2",
             projectLink: "https://naver.com",
-            contribute: 100,
-            imgUrl: "",
+            contribute: 90,
+            contributeText: "ninety",
+            imgUrl: "img",
         },
         {
             project: "디어케어 반응형 구축",
             projectDate: "2019-01-01",
             projectSummary: "컴포넌트 구축",
-            projectData: "ㅇㅇㅇ을 이용하여작업하였습니다.3",
+            projectData: "ㅇㅇㅇ을 이용하여 작업하였습니다.2",
             projectLink: "https://naver.com",
-            contribute: 100,
-            imgUrl: "",
-        },
-        {
-            project: "디어케어 반응형 구축",
-            projectDate: "2019-01-01",
-            projectSummary: "컴포넌트 구축",
-            projectData: "ㅇㅇㅇ을 이용하여작업하였습니다.4",
-            projectLink: "https://naver.com",
-            contribute: 100,
-            imgUrl: "",
-        },
-        {
-            project: "디어케어 반응형 구축",
-            projectDate: "2019-01-01",
-            projectSummary: "컴포넌트 구축",
-            projectData: "ㅇㅇㅇ을 이용하여작업하였습니다.5",
-            projectLink: "https://naver.com",
-            contribute: 100,
-            imgUrl: "",
-        },
-        {
-            project: "디어케어 반응형 구축",
-            projectDate: "2019-01-01",
-            projectSummary: "컴포넌트 구축",
-            projectData: "ㅇㅇㅇ을 이용하여작업하였습니다.6",
-            projectLink: "https://naver.com",
-            contribute: 100,
-            imgUrl: "",
-        },
-        {
-            project: "디어케어 반응형 구축",
-            projectDate: "2019-01-01",
-            projectSummary: "컴포넌트 구축",
-            projectData: "ㅇㅇㅇ을 이용하여작업하였습니다.7",
-            projectLink: "https://naver.com",
-            contribute: 100,
-            imgUrl: "",
+            contribute: 90,
+            contributeText: "ninety",
+            imgUrl: "img",
         },
     ]
     
@@ -128,16 +95,59 @@ function Portfolio(props) {
                     <div className="subdata_detail" style={{
                         border : props.colorBtn ? "1px solid white" : "1px solid black", 
                         position: position > latelyRefPosition - 100 && position < latelyRefPosition + latelyRefHeight - detailRefHeight - 100 ? "fixed" : "absolute",
-                        top: position > latelyRefPosition - 100 ? "100px" : "0",
-                        right: position > latelyRefPosition - 100 ? "30px" : "0",
-                        width: position > latelyRefPosition - 100 ? "calc(50% - 30px)" : "50%",
+                        top: position > latelyRefPosition - 100 && position < latelyRefPosition + latelyRefHeight - detailRefHeight - 100 ? "100px" : "0",
+                        right: position > latelyRefPosition - 100 && position < latelyRefPosition + latelyRefHeight - detailRefHeight - 100 ? "30px" : "0px",
+                        width: position > latelyRefPosition - 100 && position < latelyRefPosition + latelyRefHeight - detailRefHeight - 100 ? "calc(50% - 30px)" : "calc(50%)",
+                        boxShadow: props.colorBtn ? "5px 5px 20px rgba(255,255,255,.1)" : "5px 5px 20px rgba(0,0,0,.3)",
                         }}
                         ref={detailRef}
                         >
-                            {aboutProjectData[projectNum].projectData}
-                            {aboutProjectData[projectNum].projectLink}
-                            {aboutProjectData[projectNum].contribute}
-                            {aboutProjectData[projectNum].imgUrl}
+                            <div className="projectdata_text">
+                                <div>{aboutProjectData[projectNum].projectData}</div>
+                                <div>{aboutProjectData[projectNum].imgUrl}</div>
+                                <div>
+                                    <button>
+                                        <a href={aboutProjectData[projectNum].projectLink} target="_blank" rel="noopener noreferrer">
+                                        링크클릭
+                                        </a>
+                                    </button>
+                                </div>
+                            </div>
+                            <div className="circle_wrap">
+                                <div className="circle_inner"
+                                style={{
+                                    background : props.colorBtn ? "rgb(41, 42, 45)" : "white", 
+                                }}
+                                ></div>
+                                <div className={"circle " + aboutProjectData[projectNum].contributeText}>
+                                    <div className="bar left"
+                                    style={{
+                                            background : props.colorBtn ? "rgba(233, 233, 233,.3)" : "rgba(41, 42, 45,.3)", 
+                                        }}>
+                                        <div className="progress"
+                                        style={{
+                                            background : props.colorBtn ? "white" : "rgb(41, 42, 45)", 
+                                        }}></div>
+                                    </div>
+                                    <div className="bar right"
+                                    style={{
+                                            background : props.colorBtn ? "rgba(233, 233, 233,.3)" : "rgba(41, 42, 45,.3)", 
+                                        }}>
+                                        <div className="progress"
+                                        style={{
+                                            background : props.colorBtn ? "white" : "rgb(41, 42, 45)", 
+                                        }}></div>
+                                    </div>
+                                </div>
+                                <div className="progress_text">
+                                    <div className="progress_subtext">
+                                        기여도        
+                                    </div>
+                                    <div>
+                                        {aboutProjectData[projectNum].contribute}%
+                                    </div>
+                                </div>
+                            </div>
                     </div>
                 </div>
                 

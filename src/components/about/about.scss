@@ -84,6 +84,7 @@
                         background-size: contain;
                         transform: translateY(-150px);
                         transition: 1s ease-in-out;
+                        -webkit-user-drag: none;
                     }
                     @media screen and (max-width: 1025px ) {
                         img{
@@ -131,6 +132,7 @@
                     img {
                         width: 18px;
                         box-shadow: 1px 1px 1px rgba(255,255,255,.3);
+                        -webkit-user-drag: none;
                     }
                 }
                 .innertext{
