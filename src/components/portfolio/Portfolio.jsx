@@ -5,34 +5,26 @@ function Portfolio(props) {
 
     const aboutProjectData = [
         {
-            project: "EXCO",
-            projectDate: "2019-01-01",
-            projectSummary: "컴포넌트 구축",
-            projectData: "1",
-            projectLink: "https://naver.com/",
+            project: "EXCO 산림박람회",
+            projectDate: "2021-07-10",
+            projectSummary: "설문지폼 3개 제작",
+            projectData: "React, firebase 사용",
+            projectSubData: "개인 프로젝트",
+            projectLink: "https://gbforestexpo.co.kr/",
             contribute: 100,
             contributeText: "hundred",
-            imgUrl: "img",
+            imgUrl: "./assets/portfoilo/testc.jpg",
         },
         {
-            project: "디어케어 반응형 구축",
-            projectDate: "2019-01-01",
+            project: "디어케어",
+            projectDate: "2021-06-1",
             projectSummary: "컴포넌트 구축",
-            projectData: "ㅇㅇㅇ을 이용하여 작업하였습니다.2",
-            projectLink: "https://naver.com",
-            contribute: 90,
-            contributeText: "ninety",
-            imgUrl: "img",
-        },
-        {
-            project: "디어케어 반응형 구축",
-            projectDate: "2019-01-01",
-            projectSummary: "컴포넌트 구축",
-            projectData: "ㅇㅇㅇ을 이용하여 작업하였습니다.2",
-            projectLink: "https://naver.com",
-            contribute: 90,
-            contributeText: "ninety",
-            imgUrl: "img",
+            projectData: "React, firebase 사용",
+            projectSubData: "반응형웹 팀 프로젝트",
+            projectLink: "https://dear.care",
+            contribute: 70,
+            contributeText: "seventy",
+            imgUrl: "./assets/portfoilo/testb.jpg",
         },
     ]
     
@@ -72,19 +64,20 @@ function Portfolio(props) {
                     <div className="lately">
                         {aboutProjectData.map((item,idx)=>{
                             return(
-                                <div key={idx} className="subdata">
-                                    <div className="subdata_inner" style={{
-                                    border : props.colorBtn ? "1px solid white" : "1px solid black", 
+                                <div key={idx} className="subdata" >
+                                    <div className={projectNum === idx ? "subdata_inner celect" : "subdata_inner"}
+                                    style={{
+                                    border : props.colorBtn ? "1px solid white" : "1px solid black",
                                     }}>
                                         <div>
-                                            <div>{item.project}</div>
+                                            <div className="project_name">{item.project}</div>
                                             <div>{item.projectDate}</div>
                                             <div>{item.projectSummary}</div>
                                         </div>
                                         <div className="button_warp">
                                             <button
                                             onClick={()=>setProjectNum(idx)}>
-                                                클릭
+                                                작업물 미리보기
                                             </button>
                                         </div>
                                     </div>
@@ -99,18 +92,28 @@ function Portfolio(props) {
                         right: position > latelyRefPosition - 100 && position < latelyRefPosition + latelyRefHeight - detailRefHeight - 100 ? "30px" : "0px",
                         width: position > latelyRefPosition - 100 && position < latelyRefPosition + latelyRefHeight - detailRefHeight - 100 ? "calc(50% - 30px)" : "calc(50%)",
                         boxShadow: props.colorBtn ? "5px 5px 20px rgba(255,255,255,.1)" : "5px 5px 20px rgba(0,0,0,.3)",
+                        background : "url(" + aboutProjectData[projectNum].imgUrl + ")",
                         }}
                         ref={detailRef}
                         >
                             <div className="projectdata_text">
-                                <div>{aboutProjectData[projectNum].projectData}</div>
-                                <div>{aboutProjectData[projectNum].imgUrl}</div>
-                                <div>
-                                    <button>
-                                        <a href={aboutProjectData[projectNum].projectLink} target="_blank" rel="noopener noreferrer">
-                                        링크클릭
-                                        </a>
-                                    </button>
+                                <div className="projectdata_textbox" style={{
+                                    color : props.colorBtn ? "black" : "white",
+                                    background: props.colorBtn ? "rgba(255, 255, 255,.8)" : "rgba(51, 52, 55,.8)", 
+                                }}>
+                                    <div>{aboutProjectData[projectNum].projectData}</div>
+                                    <div>{aboutProjectData[projectNum].projectSubData}</div>
+                                </div>
+                                <div className="projectlinkbtn">
+                                    <a href={aboutProjectData[projectNum].projectLink} target="_blank" rel="noopener noreferrer">
+                                        <button
+                                        style={{
+                                            color : props.colorBtn ? "black" : "white", 
+                                            background: props.colorBtn ? "rgba(255, 255, 255,.8)" : "rgba(51, 52, 55,.8)", 
+                                        }}>
+                                            상세보기
+                                        </button>
+                                    </a>
                                 </div>
                             </div>
                             <div className="circle_wrap">

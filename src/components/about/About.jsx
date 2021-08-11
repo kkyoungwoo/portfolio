@@ -6,7 +6,7 @@ function About(props) {
         {
             careerDate: "2020.12.30",
             careerDateEnd: "2020.11.01",
-            careerCompany: "아이코코",
+            careerCompany: "디어케어",
             careerPosition: "developer",
             careerLink: "https://dear.care",
         }
@@ -19,7 +19,7 @@ function About(props) {
         },
         {
             project: "디어케어 반응형 구축",
-            projectLink: "https://naver.com",
+            projectLink: "https://dear.care",
         },
     ]
 

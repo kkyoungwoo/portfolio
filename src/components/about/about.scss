@@ -60,6 +60,10 @@
                             button{
                                 min-width: 70px;
                                 margin-bottom: 10px;
+                                border-radius: 15px;
+                                width: 120px;
+                                padding: 5px;
+                                background: white;
                             }
                         }
                     }
@@ -116,7 +120,13 @@
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                    padding: 10px 0;
+                    padding: 5px 0;
+                    button{
+                        border-radius: 15px;
+                        width: 120px;
+                        padding: 5px;
+                        background: white;
+                    }
                 }
                 .subdata:first-child {
                     margin-top: 0;

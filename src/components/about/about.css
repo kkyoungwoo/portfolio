@@ -112,6 +112,10 @@
 .about_warp .about_inner .aboutbanner .careerdata .aboutdata_inner .position div button {
   min-width: 70px;
   margin-bottom: 10px;
+  border-radius: 15px;
+  width: 120px;
+  padding: 5px;
+  background: white;
 }
 
 .about_warp .about_inner .aboutbanner .project_footer {
@@ -200,7 +204,14 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 10px 0;
+  padding: 5px 0;
+}
+
+.about_warp .about_inner .aboutcards .aboutcard .subdata button {
+  border-radius: 15px;
+  width: 120px;
+  padding: 5px;
+  background: white;
 }
 
 .about_warp .about_inner .aboutcards .aboutcard .subdata:first-child {

@@ -64,6 +64,8 @@
   background-size: contain;
   border-radius: 10px;
   -webkit-user-drag: none;
+  -webkit-box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
 .cerousel_wrap .cerousel_cards .cerousel_card:first-child {
