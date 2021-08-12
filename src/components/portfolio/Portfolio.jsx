@@ -66,7 +66,7 @@ function Portfolio(props) {
                                 <div key={idx} className="subdata" >
                                     <div className={projectNum === idx ? "subdata_inner celect" : "subdata_inner"}
                                     style={{
-                                    border : props.colorBtn ? "1px solid white" : "1px solid black",
+                                    border : props.colorBtn ? "1px solid rgba(255,255,255,.3)" : "1px solid rgba(0,0,0,.3)",
                                     }}>
                                         <div>
                                             <div className="project_name">{item.project}</div>

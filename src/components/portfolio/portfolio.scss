@@ -1,9 +1,9 @@
 @keyframes rotateborder {
     0% {
-        border: 1px solid black
+        border: 3px solid rgba(0,0,0,1)
     }
     100% {
-        border: 1px solid dimgray;
+        border: 3px solid rgba(0,0,0,.1);
     }
 }
 
@@ -89,6 +89,7 @@
                         border-radius: 10px;
                         margin-bottom: 20px;
                         transition: .5s;
+                        box-sizing: border-box;
                         div{
                             padding: 10px;
                             .project_name{
@@ -125,7 +126,7 @@
                         }
                     }
                     .subdata_inner.celect{
-                        background: rgba(155, 155, 155,.5);
+                        background: rgba(155, 155, 155,.3);
                         animation: rotateborder 1s infinite alternate-reverse;
                     }
                 }
@@ -165,7 +166,10 @@
                         }
                     }
                     .projectlinkbtn{
-                        width:100%;
+                        width:300px;
+                        @media screen and(max-width: 767px) {
+                            width:100%;
+                        }
                         a{
                             button{
                                 width:100%;

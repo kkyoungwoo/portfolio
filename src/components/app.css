@@ -129,7 +129,7 @@ a {
   }
 }
 
-.app header nav #mobile_nav ~ .navi_menu {
+.app header nav #mobile_nav ~ label .navi_menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -139,31 +139,32 @@ a {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding-right: 30px;
-  -webkit-transition: .5s;
-  transition: .5s;
   cursor: pointer;
-  z-index: 999;
+  background: nones;
 }
 
 @media screen and (max-width: 1025px) {
-  .app header nav #mobile_nav ~ .navi_menu {
+  .app header nav #mobile_nav ~ label .navi_menu {
     position: absolute;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
     left: -100%;
+    height: 100vh;
     top: 0px;
+    -webkit-transition: 1s;
+    transition: 1s;
   }
 }
 
-.app header nav #mobile_nav ~ .navi_menu li {
+.app header nav #mobile_nav ~ label .navi_menu li {
   font-size: 20px;
   font-weight: 300;
   padding: 30px 10px;
 }
 
-.app header nav #mobile_nav ~ .navi_menu li label span {
+.app header nav #mobile_nav ~ label .navi_menu li label span {
   display: none;
   width: 30px;
   height: 3px;
@@ -171,37 +172,40 @@ a {
   cursor: pointer;
 }
 
-.app header nav #mobile_nav:checked ~ .navi_menu {
-  position: fixed;
+.app header nav #mobile_nav:checked ~ label .navi_menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
   left: 0;
   top: 0;
   height: 100%;
-  -webkit-transition: 1s;
-  transition: 1s;
 }
 
 @media screen and (max-width: 1025px) {
-  .app header nav #mobile_nav:checked ~ .navi_menu {
+  .app header nav #mobile_nav:checked ~ label .navi_menu {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     left: 0;
     top: 0;
     white: 100%;
-    height: 100%;
+    height: 100vh;
+    background: gray;
     -webkit-transition: 1s;
     transition: 1s;
   }
 }
 
-.app header nav #mobile_nav:checked ~ .navi_menu li {
+.app header nav #mobile_nav:checked ~ label .navi_menu li {
   font-size: 20px;
   font-weight: 300;
   padding: 30px 30px;
   margin: 0;
 }
 
-.app header nav #mobile_nav:checked ~ .navi_menu li label {
+.app header nav #mobile_nav:checked ~ label .navi_menu li label {
   position: absolute;
   width: 30px;
   height: 30px;
@@ -210,12 +214,12 @@ a {
   margin-right: 30px;
 }
 
-.app header nav #mobile_nav:checked ~ .navi_menu li label span {
+.app header nav #mobile_nav:checked ~ label .navi_menu li label span {
   display: none;
 }
 
 @media screen and (max-width: 1025px) {
-  .app header nav #mobile_nav:checked ~ .navi_menu li label span {
+  .app header nav #mobile_nav:checked ~ label .navi_menu li label span {
     display: block;
     position: absolute;
     width: 30px;
@@ -227,7 +231,7 @@ a {
   }
 }
 
-.app header nav #mobile_nav:checked ~ .navi_menu li label span:nth-child(2) {
+.app header nav #mobile_nav:checked ~ label .navi_menu li label span:nth-child(2) {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }

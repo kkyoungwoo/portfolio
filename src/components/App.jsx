@@ -1,4 +1,4 @@
-import React, {useState,useEffect,useRef} from 'react';
+import React, {useState,useEffect,useRef,useCallbackBtn} from 'react';
 import Footer from './common/Footer';
 import Cerousel from './cerousel/Cerousel';
 import About from './about/About';
@@ -7,10 +7,11 @@ import Portfolio from './portfolio/Portfolio';
 import Message from './message/Message';
 import Gallery from './gallery/Gallery';
 import NotFound from './common/NotFound';
-
+import Login from './login/Login';
 import './app.css'
 
 import { Route,Switch,Link } from 'react-router-dom'
+import { useCallback } from 'react';
 
 function App() {
 
@@ -52,7 +53,11 @@ function App() {
     }
 
     const [colorBtn,setColorBtn] = useState(true)
-
+    const [navBtn,setNavBtn] = useState(false)
+    const useCallbackBtn = useCallback(()=>{
+        setNavBtn(!navBtn)
+        console.log(navBtn)
+    },[navBtn])
 
     return (
         <div className="app" style={{
@@ -66,42 +71,47 @@ function App() {
                         </div>
                     </Link>
                     <nav>
-                        <input type="checkbox" id="mobile_nav" />
+                    <input type="checkbox" id="mobile_nav" onClick={useCallbackBtn}/>
                         <label htmlFor="mobile_nav" className="mobile_btn">
                             <span style={{background : colorBtn ? "white" : "black"}}></span>
                             <span style={{background : colorBtn ? "white" : "black"}}></span>
                             <span style={{background : colorBtn ? "white" : "black"}}></span>
                         </label>
-                        <ul className="navi_menu" style={{
-                            background : colorBtn ? "#292a2d" : "white",
-                            opacity : colorBtn ? ".9" : ".9"
-                            }}>
-                            <li>
-                                <label htmlFor="mobile_nav">
-                                    <span style={{background : colorBtn ? "white" : "black"}}></span>
-                                    <span style={{background : colorBtn ? "white" : "black"}}></span>
-                                </label>
-                            </li>
-                            <Link to="/">
-                                <li style={{color : colorBtn ? "white" : "black",}}>메인페이지</li>
-                            </Link>
-                            <Link to="/portfolio">
-                                <li style={{color : colorBtn ? "white" : "black",}}>포트폴리오</li>
-                            </Link>
-                            <Link to="/message">
-                                <li style={{color : colorBtn ? "white" : "black",}}>응원메세지</li>
-                            </Link>
-                            <Link to="/gallery">
-                                <li style={{color : colorBtn ? "white" : "black",}}>사진첩</li>
-                            </Link>
-                        </ul>
+                        <label htmlFor="mobile_nav">
+                            <ul className="navi_menu" style={{
+                                opacity : colorBtn ? ".9" : ".9"
+                                }}
+                                onClick={useCallbackBtn}
+                                >
+                                <li>
+                                    <label htmlFor="mobile_nav">
+                                        <span style={{background : colorBtn ? "white" : "black"}}></span>
+                                        <span style={{background : colorBtn ? "white" : "black"}}></span>
+                                    </label>
+                                </li>
+                                <Link to="/">
+                                    <li style={{color : colorBtn ? "white" : "black",}}>메인페이지</li>
+                                </Link>
+                                <Link to="/portfolio">
+                                    <li style={{color : colorBtn ? "white" : "black",}}>포트폴리오</li>
+                                </Link>
+                                <Link to="/message">
+                                    <li style={{color : colorBtn ? "white" : "black",}}>응원메세지</li>
+                                </Link>
+                                <Link to="/gallery">
+                                    <li style={{color : colorBtn ? "white" : "black",}}>사진첩</li>
+                                </Link>
+                            </ul>
+                        </label>
                         <div className="gnb" >
                             <ul>
                                 <li onClick={()=>setColorBtn(!colorBtn)} >
                                     <img src={colorBtn ? "./assets/common/icon/white.png" : "./assets/common/icon/black.png"} alt="white" />
                                 </li>
                                 <li>
-                                    <img src={colorBtn ? "./assets/common/icon/login_white.png" : "./assets/common/icon/login_black.png"} alt="login" />
+                                    <Link to="/login">
+                                        <img src={colorBtn ? "./assets/common/icon/login_white.png" : "./assets/common/icon/login_black.png"} alt="login" />
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -135,6 +145,11 @@ function App() {
                     <Route path="/gallery" exact>
                         <div className="wrapper">
                                 <Gallery/>
+                        </div>
+                    </Route>
+                    <Route path="/login" exact>
+                        <div className="wrapper">
+                                <Login/>
                         </div>
                     </Route>
                     <Route path="*" component={NotFound} exact />
