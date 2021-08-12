@@ -53,7 +53,6 @@ function Portfolio(props) {
         setLatelyRefPosition(latelyRef.current.offsetTop)
         setLatelyRefHeight(latelyRef.current.offsetHeight)
         setDetailRefHeight(detailRef.current.offsetHeight)
-        console.log(latelyRefPosition)
     }, [onScroll])
 
     return (
@@ -77,7 +76,12 @@ function Portfolio(props) {
                                         <div className="button_warp">
                                             <button
                                             onClick={()=>setProjectNum(idx)}>
-                                                작업물 미리보기
+                                                <span>
+                                                    작업물
+                                                </span>
+                                                <span>
+                                                    미리보기
+                                                </span>
                                             </button>
                                         </div>
                                     </div>
