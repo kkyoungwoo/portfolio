@@ -68,6 +68,7 @@
 }
 
 .portfoilo_inner{
+    margin-bottom: 130px;
     .aboutcards{
         h3 {
             margin: 0 0 30px 0;
@@ -78,7 +79,7 @@
             height: 100%;
             .lately {
                 display: flex;
-                flex-direction: column;
+                flex-direction: column-reverse;
                 width: calc(50% - 50px);
                 .subdata{
                     .subdata_inner {
@@ -91,9 +92,20 @@
                         transition: .5s;
                         box-sizing: border-box;
                         div{
-                            padding: 10px;
                             .project_name{
                                 font-weight: 600;
+                                margin: 20px 5px 10px;
+                            }
+                            .project_date{
+                                width:100%;
+                                margin: 0 5px;
+                                @media screen and(max-width: 410px){
+                                    width:70px;
+                                    margin: 0 5px;
+                                }
+                            }
+                            .project_summary{
+                                margin: 10px 5px;
                             }
                         }
                         .button_warp{
@@ -105,10 +117,12 @@
                                 display: inline-block;
                                 margin-right: 10px;
                                 width: 80%;
+                                max-width: 250px;
                                 font-weight: 600;
                                 border: none;
                                 border-radius: 15px;
                                 padding: 5px;
+                                margin-bottom: 20px;
                                 @media screen and(max-width: 500px) {
                                     display: flex;
                                     flex-direction: column;
@@ -130,7 +144,7 @@
                         animation: rotateborder 1s infinite alternate-reverse;
                     }
                 }
-                .subdata:last-child {
+                .subdata:first-child {
                     .subdata_inner:last-child{
                         margin-bottom: 0;
                     }

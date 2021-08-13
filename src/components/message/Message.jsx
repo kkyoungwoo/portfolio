@@ -1,9 +1,10 @@
 import React from 'react'
+import './message.css'
 
 function Message() {
     return (
-        <div>
-            <div>멋진신발</div>
+        <div className="message_wrap">
+            <div>메세지</div>
         </div>
     )
 }

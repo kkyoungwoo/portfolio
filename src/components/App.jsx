@@ -1,4 +1,5 @@
-import React, {useState,useEffect,useRef,useCallbackBtn} from 'react';
+import React, {useState,useEffect,useRef} from 'react';
+
 import Footer from './common/Footer';
 import Cerousel from './cerousel/Cerousel';
 import About from './about/About';
@@ -13,7 +14,8 @@ import './app.css'
 import { Route,Switch,Link } from 'react-router-dom'
 import { useCallback } from 'react';
 
-function App() {
+
+function App({history}) {
 
     function useInterval(callback, delay) {
       const savedCallback = useRef(null);
@@ -77,32 +79,38 @@ function App() {
                             <span style={{background : colorBtn ? "white" : "black"}}></span>
                             <span style={{background : colorBtn ? "white" : "black"}}></span>
                         </label>
-                        <label htmlFor="mobile_nav">
-                            <ul className="navi_menu" style={{
-                                opacity : colorBtn ? ".9" : ".9"
-                                }}
-                                onClick={useCallbackBtn}
-                                >
+                        <div className="navi_menu" style={{
+                            opacity : colorBtn ? ".9" : ".9"
+                            }}
+                            onClick={useCallbackBtn}
+                            >
+                            <li>
+                                <label className="mobileclose" htmlFor="mobile_nav">
+                                    <span style={{background : colorBtn ? "white" : "black"}}></span>
+                                    <span style={{background : colorBtn ? "white" : "black"}}></span>
+                                </label>
+                            </li>
                                 <li>
-                                    <label htmlFor="mobile_nav">
-                                        <span style={{background : colorBtn ? "white" : "black"}}></span>
-                                        <span style={{background : colorBtn ? "white" : "black"}}></span>
-                                    </label>
+                                    <Link to="/" className="linkbtn" style={{color : colorBtn ? "white" : "black",}}>
+                                        메인페이지
+                                    </Link>
                                 </li>
-                                <Link to="/">
-                                    <li style={{color : colorBtn ? "white" : "black",}}>메인페이지</li>
-                                </Link>
-                                <Link to="/portfolio">
-                                    <li style={{color : colorBtn ? "white" : "black",}}>포트폴리오</li>
-                                </Link>
-                                <Link to="/message">
-                                    <li style={{color : colorBtn ? "white" : "black",}}>응원메세지</li>
-                                </Link>
-                                <Link to="/gallery">
-                                    <li style={{color : colorBtn ? "white" : "black",}}>사진첩</li>
-                                </Link>
-                            </ul>
-                        </label>
+                                <li>
+                                    <Link to="/portfolio" className="linkbtn" style={{color : colorBtn ? "white" : "black",}}>
+                                        포트폴리오
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/message" className="linkbtn" style={{color : colorBtn ? "white" : "black",}}>
+                                        응원메세지
+                                    </Link>    
+                                </li>
+                                <li>
+                                    <Link to="/gallery" className="linkbtn" style={{color : colorBtn ? "white" : "black",}}>
+                                        사진첩
+                                    </Link>
+                                </li>
+                        </div>
                         <div className="gnb" >
                             <ul>
                                 <li onClick={()=>setColorBtn(!colorBtn)} >
@@ -128,8 +136,29 @@ function App() {
                             />
                             <Cerousel/>
                             <Portfolio colorBtn={colorBtn} />
-                            <Message />
-                            <Mail />
+                            <div className="footer_img_wrap">
+                                <div>
+                                    <Link to="/message">
+                                        <div className="link_text">
+                                            깊은 강은 돌을 던졌다고 흐려지지 않는다.
+                                        </div>
+                                        <img src="./assets/message.png" alt="message" />
+                                    </Link>
+                                </div>
+                                <div>
+                                    <Link to="/mail">
+                                        <div className="link_text black">
+                                            동행을 원하는 분은 메일을 남겨주세요.
+                                        </div>
+                                        <img src="./assets/mail.png" alt="mail" />
+                                    </Link>
+                                </div>
+                            </div>
+                            <Link to="/gallery" className="gallery_btn_wrap">
+                                <button className="gallery_btn">
+                                    사진첩 보기
+                                </button>
+                            </Link>
                         </div>
                     </Route>
                     <Route path="/portfolio" exact>
@@ -149,7 +178,12 @@ function App() {
                     </Route>
                     <Route path="/login" exact>
                         <div className="wrapper">
-                                <Login/>
+                                <Login colorBtn={colorBtn}/>
+                        </div>
+                    </Route>
+                    <Route path="/mail" exact>
+                        <div className="wrapper">
+                                <Mail/>
                         </div>
                     </Route>
                     <Route path="*" component={NotFound} exact />

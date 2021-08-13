@@ -204,7 +204,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 5px 0;
+  padding: 10px 0;
 }
 
 .about_warp .about_inner .aboutcards .aboutcard .subdata button {
@@ -212,6 +212,13 @@
   width: 120px;
   padding: 5px;
   background: white;
+  margin-top: 0px;
+}
+
+@media screen and (max-width: 767px) {
+  .about_warp .about_inner .aboutcards .aboutcard .subdata button {
+    margin-top: 10px;
+  }
 }
 
 .about_warp .about_inner .aboutcards .aboutcard .subdata:first-child {

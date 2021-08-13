@@ -17,7 +17,7 @@ function Portfolio(props) {
         },
         {
             project: "디어케어",
-            projectDate: "2021-06-1",
+            projectDate: "2021-06-01",
             projectSummary: "컴포넌트 구축",
             projectData: "React, firebase 사용",
             projectSubData: "반응형웹 팀 프로젝트",
@@ -26,9 +26,20 @@ function Portfolio(props) {
             contributeText: "seventy",
             imgUrl: "./assets/portfoilo/testb.jpg",
         },
+        {
+            project: "테스트 데이터",
+            projectDate: "2021-00-00",
+            projectSummary: "테스트",
+            projectData: "React, firebase 사용",
+            projectSubData: "테스트 데이터",
+            projectLink: "https://naver.com",
+            contribute: 90,
+            contributeText: "ninety",
+            imgUrl: "./assets/portfoilo/testb.jpg",
+        },
     ]
     
-    const [projectNum,setProjectNum] = useState(0)
+    const [projectNum,setProjectNum] = useState(aboutProjectData.length -1)
     const [position,setPosition] = useState(0)
 
     const latelyRef = useRef(null)
@@ -66,12 +77,12 @@ function Portfolio(props) {
                                 <div key={idx} className="subdata" >
                                     <div className={projectNum === idx ? "subdata_inner celect" : "subdata_inner"}
                                     style={{
-                                    border : props.colorBtn ? "1px solid rgba(255,255,255,.3)" : "1px solid rgba(0,0,0,.3)",
+                                    border : props.colorBtn ? "2px solid rgba(255,255,255,.3)" : "2px solid rgba(0,0,0,.3)",
                                     }}>
                                         <div>
                                             <div className="project_name">{item.project}</div>
-                                            <div>{item.projectDate}</div>
-                                            <div>{item.projectSummary}</div>
+                                            <div className="project_date">{item.projectDate}</div>
+                                            <div className="project_summary">{item.projectSummary}</div>
                                         </div>
                                         <div className="button_warp">
                                             <button
