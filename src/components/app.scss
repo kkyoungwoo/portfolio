@@ -259,21 +259,34 @@ a{
             }
         }
     }
-    .gallery_btn_wrap{
+    .gallery_btn_box{
         display: flex;
         justify-content: center;
         align-items: center;
-        .gallery_btn {
-            font-size: 18px;
-            margin-top: 100px;
-            width: 300px;
-            border-radius: 30px;
-            height: 50px;
-            background: #eee;
-
+        .gallery_btn_wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
             @media screen and(max-width: 767px) {
-                width: 100%;
+                flex: 1;
             }
+
+            .gallery_btn {
+                font-size: 18px;
+                margin-top: 100px;
+                width: 300px;
+                border-radius: 30px;
+                height: 50px;
+                background: #eee;
+
+                @media screen and(max-width: 767px) {
+                    width: 100%;
+                }
+            }
+        }
+        .gallery_btn_wrap:last-child{
+            margin-right: 0;
         }
     }
 }

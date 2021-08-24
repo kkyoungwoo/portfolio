@@ -7,17 +7,17 @@ function Message(props) {
     const MAX_DATA = 3;
     
     const [inputText,setInputText] = useState("")
-    const [messageData, setMessageData] = useState(["반갑습니다. 메모장입니다."])
+    const [messageData, setMessageData] = useState(["메모장테스트."])
     const [moreData,setMoreData] = useState(MAX_DATA)
 
     return (
         <div className="message_wrap">
             <div className="message_title">간단한 메세지를 남겨주세요</div>
-            <div className="message_sub_title">현재 데이터가 저장되지 않습니다.</div>
+            <div className="message_sub_title">현재 데이터는 저장되지 않습니다.</div>
             <div className="message_box" style={{
                 border : props.colorBtn ? "1px solid white" : "1px solid black",
             }}>
-                <input type="text" onChange={(e)=>setInputText(e.target.value)}/>
+                <input type="text" onChange={(e)=>setInputText(e.target.value)} placeholder="저에게 하고싶은 말을 남겨주세요 :D" />
                 <button onClick={ ()=>{
                     const ArrayData = [...messageData];
                     ArrayData.unshift(inputText);

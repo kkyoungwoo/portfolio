@@ -5,7 +5,7 @@ function About(props) {
     const aboutData = [
         {
             careerDate: "2020.12.30",
-            careerDateEnd: "2020.11.01",
+            careerDateEnd: "근무중",
             careerCompany: "디어케어",
             careerPosition: "developer",
             careerLink: "https://dear.care",
@@ -36,6 +36,10 @@ function About(props) {
             skill: "Scss",
             skillimg: "./assets/icons/sass.png"
         },
+        {
+            skill: "Search",
+            skillimg: "./assets/icons/search.png"
+        },
     ]
     
     const aboutSubSkillDefault = [
@@ -65,6 +69,10 @@ function About(props) {
         {
             skill: "React.js",
             skillimg: "./assets/icons/react.png"
+        },
+        {
+            skill: "TypeScript",
+            skillimg: "./assets/icons/typescript.png"
         },
         {
             skill: "Redux",
@@ -165,7 +173,7 @@ function About(props) {
         <div className="about_warp">
             <div className="about_date">
                 <div>오늘날짜 : {props.count} </div>
-                <div>업데이트 : 2021. 1. 1.</div>
+                <div>업데이트 : {props.countTwo}</div>
             </div>
             <div className="about_inner">
                 <div className="aboutbanner" style={{
@@ -246,6 +254,9 @@ function About(props) {
                             <div>
                                 - 전통적인 웹앱 제작 방식에서 정적인 HTML로 협업 시 사용하는 기술!
                             </div>
+                            <div>
+                                - 안되면 될때까지, 로컬 검색 기술!
+                            </div>
                         </div>
                         {aboutSkillData.map((item,idx)=>{
                             return(
@@ -259,7 +270,7 @@ function About(props) {
                     <div className="aboutcard" style={{
                         border : props.colorBtn ? "1px solid white" : "1px solid black", 
                     }}>
-                        <h3>실무스킬</h3>
+                        <h3>실무스킬 A</h3>
                         <div>Default</div>
                         <div className="innertext">
                             <div>
@@ -284,11 +295,14 @@ function About(props) {
                     <div className="aboutcard" style={{
                         border : props.colorBtn ? "1px solid white" : "1px solid black", 
                     }}>
-                        <h3>실무스킬</h3>
+                        <h3>실무스킬 B</h3>
                         <div>Special I</div>
                         <div className="innertext">
                             <div>
                                 - 동적인 웹에 최적화된 자바스크립트 라이브러리, 리액트!
+                            </div>
+                            <div>
+                                - 안전한 변수 지정을 위한, 타입스크립트!
                             </div>
                             <div>
                                 - 리엑트에서 중앙데이터 관리를 위한 리덕스 툴!
@@ -309,7 +323,7 @@ function About(props) {
                     <div className="aboutcard aboutskill" style={{
                         border : props.colorBtn ? "1px solid white" : "1px solid black", 
                     }}>
-                        <h3>실무스킬</h3>
+                        <h3>실무스킬 C</h3>
                         <div>Special II</div>
                         <div className="innertext">
                             <div>

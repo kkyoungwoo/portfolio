@@ -39,6 +39,8 @@ function App({history}) {
     }
     
     let [count, setCount] = useState(new Date().toLocaleString());
+    let countTwo = "2021. 8. 24.";
+
     useInterval(() => {
         setCount(new Date().toLocaleString());
     }, 1000);
@@ -135,6 +137,7 @@ function App({history}) {
                             bannerHeightRef={bannerHeightRef}
                             useref={useref}
                             count={count}
+                            countTwo={countTwo}
                             />
                             <Cerousel/>
                             <Portfolio colorBtn={colorBtn} />
@@ -156,11 +159,18 @@ function App({history}) {
                                     </Link>
                                 </div>
                             </div>
-                            <Link to="/gallery" className="gallery_btn_wrap">
-                                <button className="gallery_btn">
-                                    사진첩 보기
-                                </button>
-                            </Link>
+                            <div className="gallery_btn_box">
+                                <Link to="/gallery" className="gallery_btn_wrap">
+                                    <button className="gallery_btn">
+                                        사진첩 보기
+                                    </button>
+                                </Link>
+                                <a href="https://github.com/kkyoungwoo" className="gallery_btn_wrap" target="_blank" rel="noopener noreferrer">
+                                    <button className="gallery_btn">
+                                        Github 바로가기
+                                    </button>
+                                </a>
+                            </div>
                         </div>
                     </Route>
                     <Route path="/portfolio" exact>
