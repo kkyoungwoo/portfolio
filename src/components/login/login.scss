@@ -1,35 +1,107 @@
-.Login_wrap{
+.login_wrap{
+    position: relative;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 197px);
-    .Login_wrap_inner{
+    min-height: calc(100vh - 197px);
+    .login_wrap_inner{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         .login_logo_img{
+            font-size: 50px;
+            margin-bottom: 20px;
             img{
-                width: 100px;
+                width: 150px;
+                @media screen and(max-width: 580px) {
+                    width: 100%;
+                    transform: scale(.6);
+                }
             }
         }
-        .Login_input{
+        .login_input{
             display: flex;
             flex-direction: column;
+            width: 500px;
+            @media screen and(max-width: 580px) {
+                width: 100%;
+            }
+            input{
+                padding: 10px 10px;
+                margin-bottom: 10px;
+                font-size: 16px;
+            }
 
         }
-        .Login_simple{
+        .login_btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            width: 500px;
+            background: rgba(0, 0, 0, 1);
+            cursor: pointer;
+            margin-bottom: 30px;
+            @media screen and(max-width: 580px) {
+                width: 100%;
+            }
+            button{
+                background: none;
+                border: none;
+                color: white;
+            }
+        }
+        .login_btn:hover{
+            background: rgba(0,0,0,.5);
+        }
+        .line{
+            width: 500px;
+            height: 1px;
+            background: white;
+            margin-bottom: 30px;
+            @media screen and(max-width: 580px) {
+                width: 100%;
+            }
+        }
+        .login_simple{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
             width: 100%;
+            height: 100%;
+            .simple_text {
+                font-size: 20px;
+                font-weight: 100;
+                margin-bottom: 10px;
+            }
             button{
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                width: 200px;
+                width: 500px;
+                height: 50px;
+                margin-bottom: 10px;
+                cursor: pointer;
+                @media screen and(max-width: 580px) {
+                    width: 100%;
+                }
                 div{
+                    display: flex;
+                    margin: 0;
+                    font-size: 16px;
+                    font-weight: bold;
                     img{
                         width: 20px;
+                        height: 20px;
+                        margin-right: 10px;
                     }
                 }
+            }
+            button:last-child{
+                margin-bottom: 0;
             }
         }
     }

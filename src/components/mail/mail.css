@@ -1,0 +1,102 @@
+.mail_wrap .mail_title {
+  max-width: 600px;
+  height: 100%;
+  text-align: center;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding: 20px;
+}
+
+.mail_wrap .mail_title span {
+  color: violet;
+}
+
+.mail_wrap form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mail_wrap form .input_text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 30px;
+  height: 30px;
+}
+
+.mail_wrap form .input_text div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 100%;
+}
+
+.mail_wrap form .input_text input {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  min-width: 100px;
+  height: 100%;
+}
+
+.mail_wrap form .textarea_text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+}
+
+.mail_wrap form .textarea_text div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.mail_wrap form .textarea_text textarea {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  min-width: 100px;
+}
+
+.mail_wrap form button {
+  margin-top: 50px;
+  width: 100%;
+  max-width: 600px;
+  height: 50px;
+}
+/*# sourceMappingURL=mail.css.map */

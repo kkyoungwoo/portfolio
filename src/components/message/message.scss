@@ -1,2 +1,60 @@
 .message_wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .message_title{
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .message_sub_title {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+    .message_box {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 1000px;
+        padding: 30px;
+        box-sizing: border-box;
+        input{
+            flex: 3;
+            height: 50px;
+            box-sizing: border-box;
+        }
+        button{
+            flex: 1;
+            height: 50px;
+            margin-left: 5px;
+        }
+    }
+    .message_inner{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        max-width: 1000px;
+        margin-top: 50px;
+        .item {
+            width: 100%;
+            min-height: 80px;
+            border: 1px solid black;
+            margin-bottom: 20px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+    }
+    .join_mail{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 80px;
+        width: 100%;
+        max-width: 1000px;
+        height: 50px;
+    }
 }

@@ -55,10 +55,13 @@ function App({history}) {
     }
 
     const [colorBtn,setColorBtn] = useState(true)
-    const [navBtn,setNavBtn] = useState(false)
+    const [navBtn,setNavBtn] = useState("")
     const useCallbackBtn = useCallback(()=>{
-        setNavBtn(!navBtn)
-        console.log(navBtn)
+        if(navBtn === ""){
+            setNavBtn("checked")
+        }else if (navBtn === "checked"){
+            setNavBtn("")
+        }
     },[navBtn])
 
     return (
@@ -73,7 +76,7 @@ function App({history}) {
                         </div>
                     </Link>
                     <nav>
-                    <input type="checkbox" id="mobile_nav" onClick={useCallbackBtn}/>
+                    <input type="checkbox" id="mobile_nav" onClick={useCallbackBtn} checked={navBtn}/>
                         <label htmlFor="mobile_nav" className="mobile_btn">
                             <span style={{background : colorBtn ? "white" : "black"}}></span>
                             <span style={{background : colorBtn ? "white" : "black"}}></span>
@@ -82,31 +85,30 @@ function App({history}) {
                         <div className="navi_menu" style={{
                             opacity : colorBtn ? ".9" : ".9"
                             }}
-                            onClick={useCallbackBtn}
                             >
                             <li>
-                                <label className="mobileclose" htmlFor="mobile_nav">
+                                <label className="mobileclose" htmlFor="mobile_nav" >
                                     <span style={{background : colorBtn ? "white" : "black"}}></span>
                                     <span style={{background : colorBtn ? "white" : "black"}}></span>
                                 </label>
                             </li>
                                 <li>
-                                    <Link to="/" className="linkbtn" style={{color : colorBtn ? "white" : "black",}}>
+                                    <Link to="/" className="linkbtn" onClick={useCallbackBtn} style={{color : colorBtn ? "white" : "black",}}>
                                         메인페이지
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/portfolio" className="linkbtn" style={{color : colorBtn ? "white" : "black",}}>
+                                    <Link to="/portfolio" className="linkbtn" onClick={useCallbackBtn} style={{color : colorBtn ? "white" : "black",}}>
                                         포트폴리오
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/message" className="linkbtn" style={{color : colorBtn ? "white" : "black",}}>
+                                    <Link to="/message" className="linkbtn" onClick={useCallbackBtn} style={{color : colorBtn ? "white" : "black",}}>
                                         응원메세지
                                     </Link>    
                                 </li>
                                 <li>
-                                    <Link to="/gallery" className="linkbtn" style={{color : colorBtn ? "white" : "black",}}>
+                                    <Link to="/gallery" className="linkbtn" onClick={useCallbackBtn} style={{color : colorBtn ? "white" : "black",}}>
                                         사진첩
                                     </Link>
                                 </li>
@@ -168,7 +170,7 @@ function App({history}) {
                     </Route>
                     <Route path="/message" exact>
                         <div className="wrapper">
-                                <Message/>
+                                <Message colorBtn={colorBtn}/>
                         </div>
                     </Route>
                     <Route path="/gallery" exact>
@@ -183,7 +185,7 @@ function App({history}) {
                     </Route>
                     <Route path="/mail" exact>
                         <div className="wrapper">
-                                <Mail/>
+                                <Mail colorBtn={colorBtn}/>
                         </div>
                     </Route>
                     <Route path="*" component={NotFound} exact />
