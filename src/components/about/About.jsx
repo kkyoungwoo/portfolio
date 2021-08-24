@@ -348,7 +348,7 @@ function About(props) {
                     <div className="aboutcard" style={{
                         border : props.colorBtn ? "1px solid white" : "1px solid black", 
                     }}>
-                        <h3>실무스킬</h3>
+                        <h3>실무스킬 D</h3>
                         <div>협업</div>
                         <div className="innertext">
                             <div>
