@@ -13,7 +13,7 @@ function Portfolio(props) {
             projectLink: "https://gbforestexpo.co.kr/",
             contribute: 100,
             contributeText: "hundred",
-            imgUrl: "./assets/portfoilo/testc.jpg",
+            imgUrl: "./assets/portfoilo/form.jpg",
         },
         {
             project: "디어케어",
@@ -24,7 +24,7 @@ function Portfolio(props) {
             projectLink: "https://dear.care",
             contribute: 70,
             contributeText: "seventy",
-            imgUrl: "./assets/portfoilo/testb.jpg",
+            imgUrl: "./assets/portfoilo/dearcare.jpg",
         },
         {
             project: "테스트 데이터",
@@ -35,7 +35,7 @@ function Portfolio(props) {
             projectLink: "https://naver.com",
             contribute: 90,
             contributeText: "ninety",
-            imgUrl: "./assets/portfoilo/testb.jpg",
+            imgUrl: "./assets/portfoilo/testc.jpg",
         },
     ]
     
@@ -114,7 +114,7 @@ function Portfolio(props) {
                             <div className="projectdata_text">
                                 <div className="projectdata_textbox" style={{
                                     color : props.colorBtn ? "black" : "white",
-                                    background: props.colorBtn ? "rgba(255, 255, 255,.8)" : "rgba(51, 52, 55,.8)", 
+                                    background: props.colorBtn ? "rgba(200, 200, 200,.8)" : "rgba(51, 52, 55,.8)", 
                                 }}>
                                     <div>{aboutProjectData[projectNum].projectData}</div>
                                     <div>{aboutProjectData[projectNum].projectSubData}</div>
@@ -124,7 +124,7 @@ function Portfolio(props) {
                                         <button
                                         style={{
                                             color : props.colorBtn ? "black" : "white", 
-                                            background: props.colorBtn ? "rgba(255, 255, 255,.8)" : "rgba(51, 52, 55,.8)", 
+                                            background: props.colorBtn ? "rgba(200, 200, 200,.8)" : "rgba(51, 52, 55,.8)", 
                                         }}>
                                             상세보기
                                         </button>

@@ -1,0 +1,67 @@
+.img_warp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+.img_warp .item {
+  position: relative;
+  width: 200px;
+  margin-top: 87px;
+  padding: 0 20px;
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  transition: -webkit-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
+}
+
+.img_warp .item img {
+  width: 100%;
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  transition: -webkit-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
+}
+
+.img_warp .item .item_text {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  -webkit-transform: translate(0%, 500%);
+          transform: translate(0%, 500%);
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  transition: -webkit-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
+}
+
+.img_warp .item:hover {
+  z-index: 1;
+}
+
+.img_warp .item:hover img {
+  -webkit-transform: scale(1.6);
+          transform: scale(1.6);
+}
+
+.img_warp .item:hover .item_text {
+  display: block;
+  width: 50%;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  -webkit-transform: translate(20%, 300%) scale(1.6);
+          transform: translate(20%, 300%) scale(1.6);
+  background: rgba(0, 0, 0, 0.5);
+}
+/*# sourceMappingURL=gallery.css.map */

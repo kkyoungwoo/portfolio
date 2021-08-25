@@ -243,9 +243,7 @@ function About(props) {
                             )
                         })}
                     </div>
-                    <div className="aboutcard" style={{
-                        border : props.colorBtn ? "1px solid white" : "1px solid black", 
-                    }}>
+                    <div className="aboutcard skills">
                         <h3>주요기술</h3>
                         <div className="innertext">
                             <div>

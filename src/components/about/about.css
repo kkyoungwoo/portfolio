@@ -1,3 +1,21 @@
+@-webkit-keyframes mainborder {
+  0% {
+    border: 3px solid pink;
+  }
+  100% {
+    border: 3px solid thistle;
+  }
+}
+
+@keyframes mainborder {
+  0% {
+    border: 3px solid pink;
+  }
+  100% {
+    border: 3px solid thistle;
+  }
+}
+
 .about_warp .about_date {
   font-size: 20px;
   font-weight: 700;
@@ -247,7 +265,7 @@
 }
 
 .about_warp .about_inner .aboutcards .aboutcard div img {
-  width: 18px;
+  width: 20px;
   -webkit-box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
           box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
   -webkit-user-drag: none;
@@ -266,8 +284,17 @@
           align-items: flex-start;
 }
 
+.about_warp .about_inner .aboutcards .aboutcard .innertext div {
+  line-height: 25px;
+  text-indent: 5px;
+}
+
 .about_warp .about_inner .aboutcards .aboutcard:last-child {
   margin: 0;
+}
+
+.about_warp .about_inner .aboutcard.skills {
+  animation: mainborder 2s infinite alternate-reverse;
 }
 
 .about_warp .about_inner .aboutcard.todo {

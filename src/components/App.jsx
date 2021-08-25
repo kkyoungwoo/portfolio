@@ -184,8 +184,8 @@ function App({history}) {
                         </div>
                     </Route>
                     <Route path="/gallery" exact>
-                        <div className="wrapper">
-                                <Gallery/>
+                        <div className="wrapper gallery">
+                                <Gallery colorBtn={colorBtn}/>
                         </div>
                     </Route>
                     <Route path="/login" exact>

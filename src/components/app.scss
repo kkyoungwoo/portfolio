@@ -46,6 +46,13 @@ a{
         padding-top:107px;
         min-height: calc(100vh - 214px);
     }
+    .wrapper.gallery{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top:0px;
+        min-height: calc(100vh - 87px);
+    }
     header {
         position: fixed;
         width: 100%;
