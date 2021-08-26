@@ -17,7 +17,7 @@ function Message(props) {
             <div className="message_box" style={{
                 border : props.colorBtn ? "1px solid white" : "1px solid black",
             }}>
-                <input type="text" onChange={(e)=>setInputText(e.target.value)} placeholder="저에게 하고싶은 말을 남겨주세요 :D" />
+                <input type="text" onChange={(e)=>setInputText(e.target.value)} placeholder="   저에게 하고싶은 말을 남겨주세요 :D" />
                 <button onClick={ ()=>{
                     const ArrayData = [...messageData];
                     ArrayData.unshift(inputText);

@@ -216,7 +216,7 @@ a {
 .app header nav #mobile_nav:checked ~ .navi_menu li {
   font-size: 20px;
   font-weight: 300;
-  padding: 30px 30px;
+  padding: 30px 10px;
   margin: 0;
 }
 
