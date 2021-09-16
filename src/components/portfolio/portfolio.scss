@@ -71,6 +71,11 @@
     .aboutcards{
         h3 {
             margin: 0 0 30px 0;
+            .hsub{
+                color: slategrey;
+                font-size: 15px;
+                margin-left: 20px;
+            }
         }
         .aboutcard{
             position: relative;
@@ -154,6 +159,7 @@
                 border-radius: 10px;
                 background-size: cover !important;
                 background-position: center center !important;
+                max-width: 950px !important;
                 .projectdata_text {
                     display: flex;
                     flex-direction: column;

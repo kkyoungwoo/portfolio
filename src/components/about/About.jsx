@@ -5,7 +5,7 @@ function About(props) {
     const aboutData = [
         {
             careerDate: "2020.12.30",
-            careerDateEnd: "근무중",
+            careerDateEnd: "재직중",
             careerCompany: "디어케어",
             careerPosition: "developer",
             careerLink: "https://dear.care",

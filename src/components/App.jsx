@@ -39,7 +39,7 @@ function App({history}) {
     }
     
     let [count, setCount] = useState(new Date().toLocaleString());
-    let countTwo = "2021. 8. 24.";
+    let countTwo = "2021. 9. 16.";
 
     useInterval(() => {
         setCount(new Date().toLocaleString());
